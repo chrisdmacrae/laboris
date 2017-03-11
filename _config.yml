@@ -22,6 +22,6 @@ defaults:
   values:
     layout: page
     button:
-      title:
-      url:
+      title: 
+      url: 
 permalink: pretty
