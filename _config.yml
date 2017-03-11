@@ -21,4 +21,7 @@ defaults:
     type: pages
   values:
     layout: page
+    button:
+      title:
+      url:
 permalink: pretty
