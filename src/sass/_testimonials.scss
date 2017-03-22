@@ -60,13 +60,17 @@
 
   }
 
-  @media screen and (min-width: 30em) {
+  @media screen and (min-width: 50em) {
     &:before, &:after {
       content: '';
       display: block;
       position: absolute;
       top: 50%;
     }
+  }
+
+  @media screen and (max-width: 50em) {
+    > img { display: none }
   }
 
 }

@@ -74,6 +74,7 @@ gulp.task('serve', () => {
 
     gulp.watch('./src/**/*.scss', ['css']);
     gulp.watch('/src/**/*.js', ['js']);
+    gulp.watch('/src/img/*', ['images']);
 });
 
 gulp.task('default', [ 'build', 'jekyll', 'serve' ]);

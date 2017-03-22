@@ -1,0 +1,7 @@
+{% if include.url %}
+<a href="{{ include.url }}" title="{{ include.text }}" class="link">
+{% endif %}
+  <button class="dib {{ include.alignment|default: 'left' }} mb2 ph3 pv2 ba b--black-10 br2 bg-{{ include.color|default: 'brand-yellow' }} f4 fw6 i no-underline pointer grow input-reset">{{ include.text }}</button>
+{% if url %}
+</a>
+{% endif %}

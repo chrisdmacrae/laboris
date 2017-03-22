@@ -4,30 +4,42 @@
       {% include tile.html %} 
     </div>
   </div>
-  <div class=" bg-brand-green">
-    {% if page.footer.cta %}
-    <div class="center mw9 pa2 ph4-ns">
-      <h2 class="relative mw7 z-2 mb2 f3 f2-m f1-l lh-title white">{{ page.footer.cta.headline }}</h2>
-      {% if page.footer.cta.textline %}
-        <p class="relative mw7 z-2 f5 f4-l lh-copy ma0 pb2 white">{{ page.footer.cta.textline }}</p>
-      {% endif %}
-      {% if page.footer.cta..visual %}
-      <div class="absolute-ns z-1 right-0 bottom-0">
-        
+  <div class="relative bg-brand-green">
+    {% if page.footer.callout %}
+    {% if page.footer.callout.image %}
+      <div class="absolute-l right-0 top-0 mw-50 z-1">
+        <img src="{{ page.footer.callout.image.url }}" alt="{{ page.footer.callout.image.caption }}" class="h5 h-auto-l" />
       </div>
+    {% endif %}
+    <div class="relative center mw9 pa2 ph4-ns">
+      <h2 class="relative mw7 mb2 f3 f2-m f1-l lh-title white ts1-m z-2">{{ page.footer.callout.headline }}</h2>
+      {% if page.footer.callout.textline %}
+        <p class="relative mw7 f5 f4-l lh-copy ma0 pb2 white ts1-m z-2">{{ page.footer.callout.textline }}</p>
       {% endif %}
-      {% if page.footer.cta.button %}
-        {% assign button = page.footer.cta.button %}
+      {% if page.footer.callout.cta %}
+        {% assign button = page.footer.callout.cta %}
         {% include button.html color=button.color alignment=button.alignment text=button.text url=button.url %}
-      {% endif %}
+      {% endif %} 
     </div>
     {% endif %}
-    <div class="center mw9 ph2 ph4-ns pv2 pv5-l cf">
-      <div class="fl-l w-30-l white-40">
+    <div class="relative center mw9 mt5 mt0-l  ph2 ph4-ns pv2 pv5-l cf z-3">
+      <div class="fl-l white-40">
         How can I help?
       </div>
-      <div class="fl-l w-70-l">
-        <hr class="b--white-10" />
+      <div class="fr-l w-80-l white-30">
+        <hr class="b--white-10 mb3" />
+        <p class="mb5">This site uses cookies and may ask you to sign up for some cool stuff. Considering, here’s a <a href="{{ site.url }}/privacy" title="View the privacy policy" class="link dim white-50">privacy policy.</a></p>
+        <div class="dib mr4 v-top">Powered by</div>
+        <div class="dib v-mid mr4">
+          <a href="https://siteleaf.com" target="_blank" title="Go to Siteleaf.com" class="link dim">
+            <img src="{{ site.url }}/assets/img/siteleaf-logo.svg" class="dib mw5 white">
+          </a>
+        </div>
+        <div class="dib v-mid">
+          <a href="https://tachyons.io" target="_blank" title="Go to Tachyons.io" class="link dim">
+            <img src="{{ site.url }}/assets/img/tachyons-logo.svg" class="dib mw5 white">
+          </a>
+        </div>
       </div>
     </div>
   </div>

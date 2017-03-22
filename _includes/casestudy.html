@@ -1,7 +1,9 @@
 <div class="w-100 br4 ba pa4 b--black-20 bg-white tc">
-  {% if include.avatar != "" %}
+  {% unless.avatar != "" %}
     <img src="{{ include.avatar.url }}" class="dn db-ns center h3 w3 br-100 ba b--black-05 bg-brand-yellow" title="Photo of {{ include.headline }}"> 
-  {% endif %}
+  {% else %}
+    <img src="{{ site.url }}/assets/img/casestudy-default.png" class="dn db-ns center h3 w3 br-100 ba b--black-05 bg-brand-yellow" title="Casestudy Placeholder"> 
+  {% endunless %}
   <h2 class="lh-title f4 strong">{{ include.headline }}</h2>
   {% if textline %}
     <p class="brand-dark-gray">{{ include.textline }}</p>

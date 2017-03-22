@@ -1,11 +1,14 @@
 ---
 title: Hello
 hero:
-  headline: Page Hero Headline
-  textline: Page Hero Textline
+  headline: What if you build something and no one buys it?
+  textline: Less than 10% of startups survive 3 years. The Idea Inquest can make sure you spend your time & money wisely. 
   cta:
-    color: yellow--brand
-    text: Page Hero Button Text
+    color: brand-yellow
+    text: Page Hero Button Text →
+  image: 
+    url: "/uploads/homepage_hero_image.png"
+    caption: "Case Study Preview"
 blocks:
 - type: letter
   headline: Why 90% of Startups Fail
@@ -31,7 +34,7 @@ blocks:
     love and care. Most importantly, ideas need a critical eye to ensure they’re simple
     enough to succeed.\n\n  > A complex system that works is invariably found to have
     evolved from a simple system that worked. A complex system designed from scratch
-    never works and cannot be patched up to make it work.\n  > - John Gall\n\n![preview-image](https://www.knowyourcompany.com/assets/marketing/pubs-ac94851c9d781c8676854a126abcd73e.png)\n\nThe
+    never works and cannot be patched up to make it work.\n  >John Gall\n\n![preview-image](https://www.knowyourcompany.com/assets/marketing/pubs-ac94851c9d781c8676854a126abcd73e.png)\n\nThe
     Idea Inquest planning guide gives you everything you need to validate your idea.
     It includes:\n* **The idea validation checklist.**<br>\n  Which takes you through
     all of the key questions you need to answer before you can call your idea business-ready.\n*
@@ -64,12 +67,16 @@ blocks:
     textline: A new digital future for insurance
     body: The body
 footer:
-  cta:
+  callout:
     headline: Cheep Insurance Case Study
     textline: See how Cheep Insurance went from being a digital brokerage to being
       the first all-digital, self-serve insurance company in Nova Scotia and doubled
       their aquisition rate.
-    image: "/uploads/17274445_10158417231525541_1161575438_n.jpg"
+    image: 
+      url: "/uploads/example_footer_image.png"
+      caption: "Case Study Preview"
+    cta:
+      text: See the case study →
 layout: index
 ---
 
