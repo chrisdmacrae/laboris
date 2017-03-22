@@ -1,6 +1,5 @@
 ---
 title: Hello
-layout: index
 hero:
   headline: Page Hero Headline
   textline: Page Hero Textline
@@ -70,5 +69,7 @@ footer:
     textline: See how Cheep Insurance went from being a digital brokerage to being
       the first all-digital, self-serve insurance company in Nova Scotia and doubled
       their aquisition rate.
+    image: "/uploads/17274445_10158417231525541_1161575438_n.jpg"
+layout: index
 ---
 
