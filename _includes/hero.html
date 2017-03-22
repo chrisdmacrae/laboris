@@ -1,18 +1,21 @@
 <header class="site-hero relative mw-100 center">
   <div class="relative bg-brand-green pv3 pv4-l">
-    <div class="relative center mw9 pa2 ph4-ns tc z-2">
-      <h1 class="relative z-2 mb2 f3 f2-m f1-l lh-title measure white">{{ include.headline }}</h1>
-      {% if include.textline != '' %}
-        <h2 class="relative z-2 fw3 f5 f4-l lh-copy ma0 pb4 white">{{ include.textline }}</h2>
+    <div class="relative center mw9 pa2 ph4-ns tc tl-l z-2 cf">
+      <div class="w-50-l mw7 center fl-l">
+        <h1 class="relative center z-2 mb2 f3 f2-m f1-l lh-title measure white">{{ include.headline }}</h1>
+        {% if include.textline != '' %}
+          <h2 class="relative center mh0-l z-2 fw3 f5 f4-l lh-copy measure ma0 pb4 white">{{ include.textline }}</h2>
+        {% endif %}
+        {% if page.hero.cta%}
+          {% assign button = page.hero.cta %}
+          {% include button.html color=button.color alignment=button.alignment text=button.text url=button.url %}
       {% endif %}
-      {% if include.visual != '' %}
-      <div class="w-100 mv2">
-        <img src="{{ include.visual.url }}" alt="{{ include.visual.title }}" />
       </div>
-      {% endif %}
-      {% if include.button != '' %}
-        {% include button.html color=include.button.color alignment=include.button.alignment text=include.button.text url=include.button.url %}
-      {% endif %}
+      {% if include.image != '' %}
+      <div class="fr-l w-50-l center mw6-ns mv4 mv0-l z-1 tr-l">
+        <img src="{{ include.image.url }}" alt="{{ include.image.caption }}" />
+      </div>
+      {% endif %} 
     </div>
   </div>
 </header>

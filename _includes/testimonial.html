@@ -1,9 +1,9 @@
 <div class="stepped-testimonial relative mv4 m5-l">
-  {% if include.avatar != "" %}
+  {% unless include.avatar != "" %}
     <img src="{{ include.avatar }}" class="dn db-ns absolute-ns h3 w3 br-100 ba b--black-05 bg-brand-yellow" title="Photo of {{ include.name }}"> 
   {% else %}
-    <img src="http://tachyons.io/img/avatar_1.jpg" class="dn db-ns absolute-ns h3 w3 br-100 ba b--black-05 bg-brand-yellow" title="Photo of {{ include.name }}""> 
-  {% endif %}
+    <img src="{{ site.url}}/assets/img/testimonial-default.png" class="dn db-ns absolute-ns h3 w3 br-100 ba b--black-05 bg-brand-yellow" title=Testimonial Placeholder""> 
+  {% endunless %}
   <div class="db w-100 br4 ba b--black-20 pv2 ph4 brand-black bg-white lh-copy">
     <div class="f5 f4-ns nested-copy-line-height nested-headline nested-headline-line-height nested-img nested-figure nested-embeds nested-hr nested-code nested-list nested-blockquote nested-dt nested-table nested-link nested-form">
     {{ include.body|markdownify }}

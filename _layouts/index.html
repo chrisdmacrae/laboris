@@ -5,10 +5,10 @@
   <div class="w-100 bg-brand-green">
     {% include nav.html %}
   </div>
-  {% include hero.html headline=page.hero.headline textline=page.hero.textline visual=page.hero.visual cta=page.header.cta %}
+  {% include hero.html headline=page.hero.headline textline=page.hero.textline image=page.hero.image cta=page.header.cta %}
   <div class="relative center mw9 z-2">
     {% for block in page.blocks %}
-      <section class="{{ block.type|default: "text" }} relative center w-100 ph2 ph0-ns cf">
+      <section class="{{ block.type|default: "text" }} relative center w-100 ph2 ph0-l cf">
         {% case block.type %}
           {% when 'letter' %}
             <div class="measure-wide center{% if forloop.first == true %} mb4 mb5-ns{% endif %}">
