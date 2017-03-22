@@ -1,0 +1,43 @@
+.normal .nested-copy {
+  p, ol, ul, blockquote {
+    margin: 0 auto;
+
+    @extend .measure;
+  }
+}
+
+.wide .nested-copy {
+  p, ol, ul, blockquote {
+    margin: 0 auto;
+
+    @extend .measure-wide;
+  }
+}
+
+.nested-headline {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.17rem; }
+  h4 { font-size: 1rem; }
+  h5 { font-size: 0.83rem; }
+  h6 { font-size: 0.67rem; }
+}
+
+.nested-blockquote blockquote {
+  font-style: italic;
+  color: var(--brand-brown);
+
+  @extend .lh-copy;
+
+  i, em {
+    display: inline-block;
+
+    &:after {
+      content: '';
+      display: block;
+      margin-top: 0.5rem;
+
+      @extend .staged-sep;
+    }
+  }
+}

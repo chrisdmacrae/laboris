@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article">
+  {% include head.html %} 
+  <body class="avenir bg-brand-light-gray">
+  <div class="w-100 bg-brand-green">
+    {% include nav.html %}
+  </div>
+  {% include hero.html headline=page.hero.headline textline=page.hero.textline visual=page.hero.visual cta=page.header.cta %}
+  <div class="relative center mw9 z-2">
+    {% for block in page.blocks %}
+      <section class="{{ block.type|default: "text" }} relative center w-100 ph2 ph0-ns cf">
+        {% case block.type %}
+          {% when 'letter' %}
+            <div class="measure-wide center{% if forloop.first == true %} mb4 mb5-ns{% endif %}">
+              {% include letter.html headline=block.headline textline=block.textline body=block.body cta=block.cta %}
+            </div>
+          {% else %}
+            <div class="measure-wide center">
+              <h2 class="f2 mt0 tc">{{ block.headline }}</h2>
+              {% if block.textline %}
+                <p class="f5 f4-l brand-dark-gray tc{% if width == 'normal' %} mw8{% endif %}">{{ block.textline }}</p>
+              {% endif %}              
+              <div class="f5 f4-l nested-copy nested-copy-line-height nested-headline nested-headline-line-height nested-img nested-figure nested-embeds nested-hr nested-code nested-list nested-blockquote nested-dt nested-table nested-link nested-form">
+                {{ block.body|markdownify }}
+              </div>
+              {% if block.type == "testimonials" %}
+                {% for t in block.testimonials %}
+                  {% include testimonial.html name=t.name body=t.body avatar=t.avatar %}
+                {% endfor %}
+              {% endif %}
+            </div>
+
+            {% if block.type == "case-study" %}
+            <div class="mw7 center cf">
+              {% for c in block.caseStudies %}
+              <div class="w-50-ns ph3 ph2-ns mb3 fl-ns">
+                {% include casestudy.html headline=c.headline textline=c.textline description=c.description avatar=c.avatar url=c.url %}
+              </div>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            {% if forloop.last != true %}
+              <hr class="center mw5 mv4 mv5-ns staged-sep" />
+            {% else %}
+              <div class="bn mv4 mv5-ns"></div>
+            {% endif %}
+        {% endcase %}
+      </section>
+    {% endfor %}
+    {{ page.content }}
+  </div>
+  {% include footer.html %}
+  </body>
+</html>

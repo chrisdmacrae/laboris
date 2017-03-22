@@ -5,6 +5,7 @@ collections:
   posts:
     title: Posts
     output: true
+    Dog: default-value
   uploads:
     title: Uploads
     output: true
@@ -13,11 +14,22 @@ defaults:
     path: ''
     type: posts
   values:
-    layout: post
     permalink: "/posts/:title/"
+    publishDate: 
 - scope:
     path: ''
     type: pages
   values:
     layout: page
+meta:
+  title: Chris D Macrae
+  titleAfter: " | Canadian Freelance Marketing Director"
+  description: 
+  canonical: https://chrisdmacrae.com
 permalink: pretty
+gems:
+- octopress-minify-html
+exclude:
+- package.json
+- node_modules
+- gulpfile.js
