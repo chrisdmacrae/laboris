@@ -1,0 +1,17 @@
+<div class="relative w-100 pa2 pa4-ns ba b--black-10 bg-white shadow-3">
+  <h2>{{ include.headline }}</h2>
+
+  {% if include.textline %}
+  <p class="f5 f4-l">{{ include.textline }}</p>
+  {% endif %}
+
+  {% if include.body %}
+  <div class="f5 f4-l nested-copy nested-copy-line-height nested-headline nested-headline-line-height nested-img nested-figure nested-embeds nested-hr nested-code nested-list nested-blockquote nested-dt nested-table nested-link nested-form">
+    {{ include.body|markdownify }}
+  </div>
+  {% endif %}
+
+  {% for button in include.cta %}
+    {{ button(button.color, button.alignment, button.text, button.url) }}
+  {% endfor %}
+</div>

@@ -1,0 +1,42 @@
+%arrow {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-color: transparent;
+}
+
+.arrow-up {
+  @extend %arrow;
+
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  border-bottom-color: initial;
+}
+
+.arrow-right {
+  @extend %arrow;
+
+  border-top-width: 5px;
+  border-bottom-width: 5px;
+  border-left-width: 5px;
+  border-left-color: initial;
+}
+
+.arrow-down {
+  @extend %arrow;
+
+  border-left-width: 5px;
+  border-right-width: 5px;
+  border-top-width: 5px;
+  border-top-color: initial;
+}
+
+.arrow-left {
+  @extend %arrow;
+
+  border-top-width: 5px;
+  border-right-width: 5px;
+  border-bottom-width: 5px;
+  border-right-color: initial;
+}

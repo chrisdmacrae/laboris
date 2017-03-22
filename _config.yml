@@ -1,5 +1,9 @@
 ---
-title: CDM Freelance
+meta:
+  title: Chris D Macrae 
+  titleAfter: " | Canadian Freelance Marketing Director"
+  description:  
+  canonical: https://chrisdmacrae.com
 timezone: UTC
 collections:
   posts:
@@ -14,14 +18,17 @@ defaults:
     path: ''
     type: posts
   values:
-    layout: post
     permalink: "/posts/:title/"
+    publishDate:
 - scope:
     path: ''
     type: pages
   values:
     layout: page
-    button:
-      title: 
-      url: 
 permalink: pretty
+gems:
+  - octopress-minify-html
+exclude:
+  - package.json
+  - node_modules
+  - gulpfile.js

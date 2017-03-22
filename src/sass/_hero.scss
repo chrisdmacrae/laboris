@@ -1,0 +1,16 @@
+.site-hero {
+  &:after {
+    content: '';
+    background-image: url('../img/bottom.svg');
+    background-position: bottom center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 80%;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    display: block;
+    min-height: 802px;
+    width: 100%;
+  }
+}

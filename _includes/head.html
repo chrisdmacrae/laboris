@@ -1,0 +1,30 @@
+{% comment %}
+  HTML Head
+  ---
+  This is the HTML head for all pages.
+  Extend with {{ capture head }}
+{% endcomment %}
+{% capture canonical %}
+  {% if page.meta.canonical == "" %}
+    {{ page.meta.canonical }}
+  {% else %}
+    {{ site.meta.canonical }}{{ page.url }}
+  {% endif %}
+{% endcapture %}
+<head>
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  {% include seoMeta.html %}
+
+  <link rel="home" href="{{ site.meta.canonical }}" />
+  <link rel="canonical" href="{{ canonical }}">
+
+  <link rel="stylesheet" type="text/css" href="assets/css/screen.css" />
+  
+  <script type="text/js" src="js/main.js"></script>
+
+  {{ head }}
+
+</head>
