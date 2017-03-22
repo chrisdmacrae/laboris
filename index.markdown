@@ -2,13 +2,14 @@
 title: Hello
 hero:
   headline: What if you build something and no one buys it?
-  textline: Less than 10% of startups survive 3 years. The Idea Inquest can make sure you spend your time & money wisely. 
+  textline: Less than 10% of startups survive 3 years. The Idea Inquest can make sure
+    you spend your time & money wisely.
   cta:
     color: brand-yellow
     text: Page Hero Button Text →
-  image: 
+  image:
     url: "/uploads/homepage_hero_image.png"
-    caption: "Case Study Preview"
+    caption: Case Study Preview
 blocks:
 - type: letter
   headline: Why 90% of Startups Fail
@@ -72,9 +73,9 @@ footer:
     textline: See how Cheep Insurance went from being a digital brokerage to being
       the first all-digital, self-serve insurance company in Nova Scotia and doubled
       their aquisition rate.
-    image: 
+    image:
       url: "/uploads/example_footer_image.png"
-      caption: "Case Study Preview"
+      caption: Case Study Preview
     cta:
       text: See the case study →
 layout: index
