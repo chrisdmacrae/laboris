@@ -1,0 +1,32 @@
+.list-negative, .list-positive {
+  @extend .list;
+  padding: 0;
+
+  li {
+    margin: 0;
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 1rem;
+  }
+
+  li:last-child {
+    padding-bottom: 0;
+  }
+
+  li:before {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0.25rem;
+  }
+}
+
+.list-positive li:before {
+  content: '✓';
+  color: var(--brand-teal);
+}
+
+.list-negative li:before {
+  content: 'X';
+  color: red;
+}

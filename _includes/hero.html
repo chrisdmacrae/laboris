@@ -1,21 +1,22 @@
 <header class="site-hero relative mw-100 center">
   <div class="relative bg-brand-green pv3 pv4-l">
-    <div class="relative center mw9 pa2 ph4-ns tc tl-l z-2 cf">
-      <div class="w-50-l mw7 center fl-l">
-        <h1 class="relative center z-2 mb2 f3 f2-m f1-l lh-title measure white">{{ include.headline }}</h1>
-        {% if include.textline != '' %}
-          <h2 class="relative center mh0-l z-2 fw3 f5 f4-l lh-copy measure ma0 pb4 white">{{ include.textline }}</h2>
-        {% endif %}
-        {% if page.hero.cta%}
-          {% assign button = page.hero.cta %}
-          {% include button.html color=button.color alignment=button.alignment text=button.text url=button.url %}
-      {% endif %}
-      </div>
-      {% if include.image != '' %}
-      <div class="fr-l w-50-l center mw6-ns mv4 mv0-l z-1 tr-l">
+    <div class="relative center mw-default pa2 ph4-ns tc tl-l z-2 cf">
+      {% if include.image %}
+      <div class="fr-l w-50-l center mw6-ns z-1 tr-l">
         <img src="{{ include.image.url }}" alt="{{ include.image.caption }}" />
       </div>
-      {% endif %} 
+      {% endif %}
+      <div class="mw7 center{% if include.image %} fl-l w-50-l{% else %} tc{% endif %}">
+        <h1 class="relative center z-2 mb2 f3 f2-m f1-l lh-title measure white">{{ include.headline }}</h1>
+        {% if include.textline %}
+          <h2 class="relative center z-2 fw3 f5 f4-l lh-copy measure mv0 pb4 white{% if include.image %} mh0-l{% endif %}">
+            {{ include.textline }}
+          </h2>
+        {% endif %}
+        {% if page.hero.cta%}
+          {% include cta.html cta=page.hero.cta %}
+        {% endif %}
+      </div> 
     </div>
   </div>
 </header>

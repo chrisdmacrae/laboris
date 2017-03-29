@@ -1,55 +1,93 @@
 <!DOCTYPE html>
 <html lang="en" itemscope itemtype="http://schema.org/Article">
   {% include head.html %} 
-  <body class="avenir bg-brand-light-gray">
-  <div class="w-100 bg-brand-green">
-    {% include nav.html %}
-  </div>
-  {% include hero.html headline=page.hero.headline textline=page.hero.textline image=page.hero.image cta=page.header.cta %}
-  <div class="relative center mw9 z-2">
-    {% for block in page.blocks %}
-    <section class="{{ block.type|default: "text" }} relative center w-100 cf{% if block.type !== 'letter' %} ph2 ph0-l{% endif %}">
-        {% case block.type %}
-          {% when 'letter' %}
-            <div class="measure-wide center{% if forloop.first == true %} mb4 mb5-ns{% endif %}">
-              {% include letter.html headline=block.headline textline=block.textline body=block.body cta=block.cta %}
-            </div>
-          {% else %}
-            <div class="measure-wide center">
-              <h2 class="f2 mt0 tc">{{ block.headline }}</h2>
-              {% if block.textline %}
-                <p class="f5 f4-l brand-dark-gray tc{% if width == 'normal' %} mw8{% endif %}">{{ block.textline }}</p>
-              {% endif %}              
-              <div class="f5 f4-l nested-copy nested-copy-line-height nested-headline nested-headline-line-height nested-img nested-figure nested-embeds nested-hr nested-code nested-list nested-blockquote nested-dt nested-table nested-link nested-form">
-                {{ block.body|markdownify }}
+<body class="avenir bg-brand-yellow">
+  <div id="page" class="bg-brand-light-gray">
+    <div class="w-100 bg-brand-green">
+      {% include nav.html %}
+    </div>
+    {% include hero.html headline=page.hero.headline textline=page.hero.textline image=page.hero.image cta=page.header.cta %}
+    <div class="relative center mw9 z-2">
+      {% for block in page.blocks %}
+      <section class="{{ block.type|default: "text" }} relative center w-100 cf{% if block.type != 'letter' %} ph2 ph0-l{% endif %}">
+          {% case block.type %}
+            {% when 'letter' %}
+              <div class="measure-wide center{% if forloop.first == true %} mb4 mb5-ns{% endif %}">
+                {% include letter.html headline=block.headline textline=block.textline body=block.body cta=block.cta %}
               </div>
-              {% if block.type == "testimonials" %}
-                {% for t in block.testimonials %}
-                  {% include testimonial.html name=t.name body=t.body avatar=t.avatar %}
-                {% endfor %}
-              {% endif %}
-            </div>
-
-            {% if block.type == "case-study" %}
-            <div class="mw7 center cf">
-              {% for c in block.caseStudies %}
-              <div class="w-50-ns ph3 ph2-ns mb3 fl-ns">
-                {% include casestudy.html headline=c.headline textline=c.textline description=c.description avatar=c.avatar url=c.url %}
+            {% when 'form' %}
+              <div class="relative measure-wide center {% if forloop.first == true %} mb4 mb5-ns{% endif %}">
+                <div class="bg-white ba b--black-10 br4 pa2 overflow-hidden" cf-context>
+                  {% include {{ block.include }} %}
+                </div>
               </div>
-              {% endfor %}
-            </div>
-            {% endif %}
-
-            {% if forloop.last != true %}
-              <hr class="center mw5 mv4 mv5-ns staged-sep" />
             {% else %}
-              <div class="bn mv4 mv5-ns"></div>
-            {% endif %}
-        {% endcase %}
-      </section>
-    {% endfor %}
-    {{ page.content }}
+              <div class="measure-wide center">
+                <h2 class="f3 f2-ns mt0 tc">{{ block.headline }}</h2>
+                {% if block.textline %}
+                  <p class="f5 f4-l brand-dark-gray tc{% if width == 'normal' %} mw8{% endif %}">{{ block.textline }}</p>
+                {% endif %}              
+                <div class="f5 f4-l nested-copy nested-copy-line-height nested-headline nested-headline-line-height nested-img nested-figure nested-embeds nested-hr nested-code nested-list nested-blockquote nested-dt nested-table nested-link nested-form">
+                  {{ block.body|markdownify }}
+                </div>
+                {% if block.type == "testimonials" %}
+                  {% for t in block.testimonials %}
+                    {% include testimonial.html name=t.name body=t.body avatar=t.avatar %}
+                  {% endfor %}
+                {% endif %}
+              </div>
+
+              {% if block.type == "case-study" %}
+              <div class="mw7 center f5 f4-l cf">
+                {% for c in block.caseStudies %}
+                <div class="w-50-ns ph3 ph2-ns mb3 fl-ns">
+                  {% include casestudy.html headline=c.headline textline=c.textline body=c.body avatar=c.avatar url=c.url %}
+                </div>
+                {% endfor %}
+              </div>
+              {% endif %}
+
+              {% if block.type == "comparison" %}
+              <div class="mw7 center f5 f4-l cf">
+                {% include comparison.html comparison=block.comparison %}
+              </div>
+              {% endif %}
+
+              {% if block.cta%}
+              <div class="measure-wide center">
+                {% include cta.html cta=block.cta %}
+              </div>
+              {% endif %} 
+          {% endcase %}
+        </section>
+
+        {% if forloop.last != true %}
+          <hr class="center mw5 mv4 mv5-ns staged-sep" />
+        {% else %}
+          <div class="bn mv4 mv5-ns"></div>
+        {% endif %}
+
+      {% endfor %}
+    </div>
+    {% include footer.html %}
   </div>
-  {% include footer.html %}
-  </body>
+  <script src="/assets/js/jquery-3.2.0.min.js" type="text/javascript"></script>
+  <script src="/assets/js/conversational-form.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/assets/js/screen.min.js"></script>
+  <!-- Drip -->
+  <script type="text/javascript">
+    var _dcq = _dcq || [];
+    var _dcs = _dcs || {}; 
+    _dcs.account = '1942376';
+
+    (function() {
+      var dc = document.createElement('script');
+      dc.type = 'text/javascript'; dc.async = true; 
+      dc.src = '//tag.getdrip.com/1942376.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(dc, s);
+    })();
+  </script>
+  <!-- End Drip -->
+</body>
 </html>
