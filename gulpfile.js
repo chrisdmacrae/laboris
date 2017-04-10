@@ -4,6 +4,7 @@ var child       = require('child_process');
 var gulp        = require('gulp');
 var gutil       = require('gulp-util');
 var clean       = require('gulp-clean');
+var sequence    = require('run-sequence');
 var concat      = require('gulp-concat');
 var cache       = require('gulp-cache');
 var sass        = require('gulp-sass');
@@ -44,12 +45,10 @@ gulp.task('jekyll-serve', ['process'], function (done) {
 });
 
 // Production build the Jekyll site
-gulp.task('jekyll-build', ['clean', 'process'], () => {
+gulp.task('jekyll-build', ['process'], () => {
   browserSync.notify(messages.jekyllBuild);
   const jekyll = child.spawn('jekyll', ['build',
     '--config=_config.yml,_config_prod.yml',
-    '--incremental',
-    '--drafts'
   ]);
 
   const jekyllLogger = (buffer) => {
@@ -133,5 +132,9 @@ gulp.task('clean', function() {
 });
 
 gulp.task('process', [ 'sass', 'js', 'images' ]);
-gulp.task('prodution', [ 'clean', 'jekyll-build' ]);
+
+gulp.task('build', function(cb) {
+  sequence('clean', 'jekyll-build', cb);
+});
+
 gulp.task('default', [ 'jekyll-serve', 'browser-sync', 'watch' ]);

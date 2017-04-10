@@ -11,7 +11,7 @@ blocks:
     Instead of rushing to turn your idea into a business — making mistakes about what features or services to build, who to target, and what to market to them — the Idea Inquest uses detailed systems, processes, and techniques to confront all of the unknowns about your idea. It leaves no about assumptions your audience, your competitors, and your industry so you can start you business at a steady pace.
 
 
-    **The most common failures startup founders make are:**
+    **The most common failures business founders make are:**
 
     - Making the incorrect assumptions about who their audience
 

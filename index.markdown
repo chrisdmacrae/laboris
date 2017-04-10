@@ -1,7 +1,7 @@
 ---
 hero:
   headline: What if you build something and no one buys it?
-  textline: Less than 10% of startups survive 3 years. The Idea Inquest can make sure
+  textline: Less than 10% of businesses survive 3 years. The Idea Inquest can make sure
     you spend your time & money wisely.
   cta:
     text: Tell us about your business →
@@ -13,7 +13,7 @@ blocks:
 - type: letter
   headline: Why 90% of Startups Fail
   body: >
-    Did you know that 90% of startups fail because of premature scaling? This is because: 
+    Did you know that 90% of businesses fail because of premature scaling? This is because: 
 
     * They don’t know their audience.
 
