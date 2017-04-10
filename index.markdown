@@ -83,6 +83,5 @@ blocks_later:
     name: Isiah Wint-Rose, Made By Ignite 
   - body: We brought Chris in for an initial consultation a few months after our business opened, and then underwent an Idea Inquest. Since then, we've reached the front page of Google, seen a steady upwards trend in site traffic, and lowered our bounce rate dramatically! 
     name: Jen Jackson, Cheep Insurance
-layout: index
 ---
 

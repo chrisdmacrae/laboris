@@ -123,6 +123,5 @@ blocks:
       - An action plan to get your website to the front page of Google
       - An actionable business strategy that tells you how much money and how long your idea will take
       - All of the raw research data
-layout: index
 ---
 

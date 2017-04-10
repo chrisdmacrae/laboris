@@ -22,6 +22,5 @@ blocks:
 
     That depends on your business needs. The Idea Inquest starts at $999 and the price will change based on your unique scenario.
 callout: "" 
-layout: index
 ---
 

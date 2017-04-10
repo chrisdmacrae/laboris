@@ -1,5 +1,12 @@
 ---
-timezone: UTC
+title: Laboris
+timezone: ADT
+meta:
+  title: Chris D Macrae
+  titleAfter: " | Canadian Freelance Marketing Director"
+  description: 
+  canonical: https://chrisdmacrae.com
+  image: "/assets/img/logo.png"
 collections:
   posts:
     title: Posts
@@ -15,11 +22,13 @@ defaults:
     path: ''
     type: posts
   values:
+    layout: post
     permalink: "/posts/:title/"
     publishDate: 
 - scope:
     type: pages
   values:
+    layout: page
     callout:
       headline: Begin your Idea Inquest today and begin building your business in 30 days
       textline: The Idea Inquest guarantees you either start building your business in 30 days, or pivot towards a new exciting future without wasting a single dollar.
@@ -40,16 +49,12 @@ defaults:
     type: pages
   values:
     permalink: "/:basename"
-meta:
-  title: Chris D Macrae
-  titleAfter: " | Canadian Freelance Marketing Director"
-  description: 
-  canonical: https://chrisdmacrae.com
 permalink: pretty
 markdown: kramdown
 gems:
 - octopress-minify-html
 - kramdown
+- jekyll-sitemap
 exclude:
 - Gemfile
 - package.json
