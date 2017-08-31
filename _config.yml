@@ -1,18 +1,12 @@
 ---
-title: Laboris
-timezone: ADT
-meta:
-  title: Chris D Macrae
-  titleAfter: " | Canadian Freelance Marketing Director"
-  description: 
-  canonical: https://chrisdmacrae.com
-  image: "/assets/img/logo.png"
+title: CDM Freelance
+timezone: Africa/Monrovia
 collections:
-  posts:
-    title: Posts
-    output: true
   caseStudies:
     title: Case Studies
+    output: true
+  posts:
+    title: Posts
     output: true
   uploads:
     title: Uploads
@@ -22,43 +16,44 @@ defaults:
     path: ''
     type: posts
   values:
-    layout: post
     permalink: "/posts/:title/"
     publishDate: 
 - scope:
+    path: ''
     type: pages
   values:
-    layout: page
     callout:
-      headline: Begin your Idea Inquest today and begin building your business in 30 days
-      textline: The Idea Inquest guarantees you either start building your business in 30 days, or pivot towards a new exciting future without wasting a single dollar.
+      headline: Begin your Idea Inquest today and begin building your business in
+        30 days
+      textline: The Idea Inquest guarantees you either start building your business
+        in 30 days, or pivot towards a new exciting future without wasting a single
+        dollar.
       cta:
-        url: /get-started/
+        url: "/get-started/"
         text: Get started →
     x_footer:
       callout:
         headline: Cheep Insurance Case Study
-        textline: See how I helped Cheep Insurance optimize their inbound funnel, helped them get on the front page of Google, and honed in their brand.
+        textline: See how I helped Cheep Insurance optimize their inbound funnel,
+          helped them get on the front page of Google, and honed in their brand.
         image:
           url: "/uploads/example_footer_image.png"
           caption: Case Study Preview
           cta:
             text: See the case study →
-- scope:
-    path: '404.html'
-    type: pages
-  values:
-    permalink: "/:basename"
+meta:
+  title: Chris D Macrae
+  titleAfter: " | Canadian Freelance Marketing Director"
+  description: 
+  canonical: https://chrisdmacrae.com
 permalink: pretty
 markdown: kramdown
 gems:
 - octopress-minify-html
 - kramdown
-- jekyll-sitemap
 exclude:
 - Gemfile
 - package.json
 - "/node_modules/"
 - gulpfile.js
 - "/src/"
-- firebase.json
