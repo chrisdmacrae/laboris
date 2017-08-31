@@ -1,0 +1,12 @@
+<div class="relative cf">
+  {% for list in include.comparison %}
+  <div class="w-50-ns fl ph4">
+    {% if list.title %}<span class="dib ph3 pv2 br4 bg-brand-peach brand-black">{{ list.title }}</span>{% endif %}
+    <ul class="{% if list.type == "negative" %} list-negative{% else %} list-positive{% endif %}">
+      {% for item in list.items %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+  {% endfor %}
+</div>

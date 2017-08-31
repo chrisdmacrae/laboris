@@ -2,15 +2,15 @@
   {% unless.avatar != "" %}
     <img src="{{ include.avatar.url }}" class="dn db-ns center h3 w3 br-100 ba b--black-05 bg-brand-yellow" title="Photo of {{ include.headline }}"> 
   {% else %}
-    <img src="{{ site.url }}/assets/img/casestudy-default.png" class="dn db-ns center h3 w3 br-100 ba b--black-05 bg-brand-yellow" title="Casestudy Placeholder"> 
+    <img src="/assets/img/casestudy-default.png" class="dn db-ns center h3 w3 br-100 ba b--black-05 bg-brand-yellow" title="Casestudy Placeholder"> 
   {% endunless %}
   <h2 class="lh-title f4 strong">{{ include.headline }}</h2>
-  {% if textline %}
+  {% if include.textline %}
     <p class="brand-dark-gray">{{ include.textline }}</p>
   {% endif %}
   <hr class="sep mw2 brand-mid-gray" />
-  <p class="lh-copy brand-dark-gray">{{ include.body|markdownify }}</p>
-  {% if url %}
-    <a href="{{ include.url }}" title="Check out {{ include.headline }}'s story">See {{headline}}'s story →</a>
-  {% endif %}
+  <div class="lh-copy brand-dark-gray">{{ include.body|markdownify }}</div>
+  {% unless include.url %}
+    <a href="{{ include.url }}" title="Check out {{ include.headline }}'s story">See {{ include.headline }}'s story →</a>
+  {% endunless %}
 </div>

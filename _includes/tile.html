@@ -1,0 +1,9 @@
+<div class="relative w-100 br4 pa2 pa4-ns ba b--black-10 bg-white tc">
+  <h2>{{ include.headline }}</h2>
+  {% if include.textline %}
+  <p class="center f5 f4-l brand-dark-gray measure-wide">{{ include.textline }}</p>
+  {% endif %}
+  {% if include.cta %}
+    {% include cta.html cta=include.cta %}
+  {% endif %}
+</div>

@@ -1,3 +1,7 @@
 /node_modules/
 /_site/
 .DS_Store
+/assets/
+.firebaserc
+firebase.json
+_config_*

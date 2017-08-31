@@ -1,0 +1,14 @@
+{% if include.cta %}
+  {% if include.cta.include %}
+    {% include {{include.cta.include}} %}
+  {% else %}
+    {% assign button = include.cta %}
+    {% if button.type == "drift" %}
+      <div {{ button.action }}>
+        {% include button.html color=button.color alignment=button.alignment text=button.text url='#' %}
+      </div>
+    {% else %}
+      {% include button.html color=button.color alignment=button.alignment text=button.text url=button.url %}
+    {% endif %}
+  {% endif %}
+{% endif %}

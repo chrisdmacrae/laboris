@@ -1,46 +1,77 @@
 <footer class="site-footer w-100">
-  <div class="site-footer-cta relative center mw9">
-    <div class="absolute w-100 ph2">
-      {% include tile.html %} 
-    </div>
-  </div>
-  <div class="relative bg-brand-green">
-    {% if page.footer.callout %}
-    {% if page.footer.callout.image %}
-      <div class="absolute-l right-0 top-0 mw-50 z-1">
-        <img src="{{ page.footer.callout.image.url }}" alt="{{ page.footer.callout.image.caption }}" class="h5 h-auto-l" />
+  <div class="site-footer-cta relative">
+    <div class="w-100 absolute ph2">
+      <div class="w-100 mw-default center">
+        {% if page.callout != "" %}
+          {% include tile.html headline=page.callout.headline textline=page.callout.textline cta=page.callout.cta %} 
+        {% endif %}
       </div>
-    {% endif %}
-    <div class="relative center mw9 pa2 ph4-ns">
-      <h2 class="relative mw7 mb2 f3 f2-m f1-l lh-title white ts1-m z-2">{{ page.footer.callout.headline }}</h2>
-      {% if page.footer.callout.textline %}
-        <p class="relative mw7 f5 f4-l lh-copy ma0 pb2 white ts1-m z-2">{{ page.footer.callout.textline }}</p>
-      {% endif %}
-      {% if page.footer.callout.cta %}
-        {% assign button = page.footer.callout.cta %}
-        {% include button.html color=button.color alignment=button.alignment text=button.text url=button.url %}
-      {% endif %} 
     </div>
-    {% endif %}
-    <div class="relative center mw9 mt5 mt0-l  ph2 ph4-ns pv2 pv5-l cf z-3">
-      <div class="fl-l white-40">
-        How can I help?
-      </div>
-      <div class="fr-l w-80-l white-30">
-        <hr class="b--white-10 mb3" />
-        <p class="mb5">This site uses cookies and may ask you to sign up for some cool stuff. Considering, here’s a <a href="{{ site.url }}/privacy" title="View the privacy policy" class="link dim white-50">privacy policy.</a></p>
-        <div class="dib mr4 v-top">Powered by</div>
-        <div class="dib-ns v-mid mr4">
-          <a href="https://siteleaf.com" target="_blank" title="Go to Siteleaf.com" class="link dim">
-            <img src="{{ site.url }}/assets/img/siteleaf-logo.svg" class="dib mw5 white">
-          </a>
+    <div class="bg-brand-green">
+      <div class="relative center mw-default">
+        {% if page.footer.callout %}
+        {% if page.footer.callout.image %}
+        <div class="absolute-l right-0 top-0 mw-50 z-1">
+          <img src="{{ page.footer.callout.image.url }}" alt="{{ page.footer.callout.image.caption }}" class="h5 h-auto-l" />
         </div>
-        <div class="dib-ns v-mid">
-          <a href="https://tachyons.io" target="_blank" title="Go to Tachyons.io" class="link dim">
-            <img src="{{ site.url }}/assets/img/tachyons-logo.svg" class="dib mw5 white">
-          </a>
+        {% endif %}
+        <div class="relative center mw-default pa2 ph4-ns">
+          <h2 class="relative mw7 mb2 f3 f2-m f1-l lh-title white ts1-m z-2">{{ page.footer.callout.headline }}</h2>
+          {% if page.footer.callout.textline %}
+          <p class="relative mw7 f5 f4-l lh-copy ma0 pb2 white ts1-m z-2">{{ page.footer.callout.textline }}</p>
+          {% endif %}
+          {% if page.footer.callout.cta %}
+            {% include cta.html cta=page.footer.callout.cta %}
+          {% endif %} 
+        </div>
+        {% endif %}
+        <div class="relative center mw-default pt5 pt0-l ph2 ph4-ns pv2 pv5-l white-30 cf z-3">
+          <div class="dn db-l fl-l">
+            How can I help?
+          </div>
+          <div class="fr-l w-80-l">
+            <div class="dib w-100">
+              <strong>Idea Inquest</strong>
+              <ul>
+                <li><a href="/how-it-works/" class="db">How it works</a></li>
+                <li><a href="/get-started/" class="db">Get started</a></li>
+              </ul>
+            </div>
+            <hr class="b--white-10 mb3" />
+            <p class="mb5">This site uses cookies and may ask you to sign up for some cool stuff. Considering, here’s a <a href="/privacy" title="View the privacy policy" class="link dim white-50">privacy policy.</a></p>
+            <div class="dib mb4 mr4 v-top">Powered by:</div>
+            <div class="db dib-l v-mid mb4 mr4-l tc">
+              <a href="https://siteleaf.com" target="_blank" title="Go to Siteleaf.com" class="link dim">
+                <img src="/assets/img/siteleaf-logo.svg" class="dib mw5 white">
+              </a>
+            </div>
+            <div class="db dib-l v-mid tc">
+              <a href="https://tachyons.io" target="_blank" title="Go to Tachyons.io" class="link dim">
+                <img src="/assets/img/tachyons-logo.svg" class="dib mw5 white">
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </footer>
+
+<script src="/assets/js/jquery-3.2.0.min.js" type="text/javascript"></script>
+<script src="/assets/js/conversational-form.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/assets/js/screen.min.js"></script>
+
+<!-- Drip -->
+<script type="text/javascript">
+var _dcq = _dcq || [];
+var _dcs = _dcs || {}; 
+_dcs.account = '1942376';
+
+(function() {
+  var dc = document.createElement('script');
+  dc.type = 'text/javascript'; dc.async = true; 
+  dc.src = '//tag.getdrip.com/1942376.js';
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(dc, s);
+})();
+</script>
+<!-- End Drip -->

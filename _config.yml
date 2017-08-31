@@ -1,11 +1,13 @@
 ---
 title: CDM Freelance
-timezone: UTC
+timezone: Africa/Monrovia
 collections:
+  caseStudies:
+    title: Case Studies
+    output: true
   posts:
     title: Posts
     output: true
-    Dog: default-value
   uploads:
     title: Uploads
     output: true
@@ -20,18 +22,38 @@ defaults:
     path: ''
     type: pages
   values:
-    layout: page
+    callout:
+      headline: Begin your Idea Inquest today and begin building your business in
+        30 days
+      textline: The Idea Inquest guarantees you either start building your business
+        in 30 days, or pivot towards a new exciting future without wasting a single
+        dollar.
+      cta:
+        url: "/get-started/"
+        text: Get started →
+    x_footer:
+      callout:
+        headline: Cheep Insurance Case Study
+        textline: See how I helped Cheep Insurance optimize their inbound funnel,
+          helped them get on the front page of Google, and honed in their brand.
+        image:
+          url: "/uploads/example_footer_image.png"
+          caption: Case Study Preview
+          cta:
+            text: See the case study →
 meta:
   title: Chris D Macrae
   titleAfter: " | Canadian Freelance Marketing Director"
   description: 
   canonical: https://chrisdmacrae.com
 permalink: pretty
+markdown: kramdown
 gems:
 - octopress-minify-html
+- kramdown
 exclude:
 - Gemfile
 - package.json
-- node_modules
+- "/node_modules/"
 - gulpfile.js
 - "/src/"

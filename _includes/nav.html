@@ -1,12 +1,13 @@
 <nav class="center w-100 mw9 pt4 pt5-l z-999">
   <div class="ph2 ph4-ns tc tl-l cf">
-    <a href="{{ site.url }}" title="Home" class="fl-l link dim w-100 w-25-l">
+    <a href="{{ site.url }}" title="Home" class="dib link dim v-top w3 w-auto-ns">
       <img src="/assets/img/logo.png" alt="Homepage" />
     </a>
-    <div class="dn db-l fl-l w-100 w-75-l mt3 mt0-l tc tr-l"> 
-      <nav class="dib w-auto ph2 pv2 br2 o-70 bg-white">
-        <a href="#" title="#" class="link dim brand-green f4 mh2 mh3-ns">Site link</a>
-      </nav>
-    </div>
+    <nav class="dn dib-l w-auto pt3">
+      <a href="/how-it-works/" title="See how the Idea Inquest works" class="link dim brand-green f4 mh2 mh3-ns">How it works</a>
+    </nav>
+    <nav class="dn dib-l w-auto pt3 fr-l">
+      {% include button.html color="brand-yellow" text="Get started →" url="/get-started/" %}
+    </nav>
   </div>
 </nav>

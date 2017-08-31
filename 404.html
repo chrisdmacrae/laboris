@@ -1,0 +1,38 @@
+---
+title: Page not found
+hero:
+  headline: 404, page not found
+  textline: Sorry, one of us made a wrong move and got you lost in the void.
+layout: nil
+---
+
+<!DOCTYPE html>
+<html lang="en" itemscope itemtype="http://schema.org/Article" class="h-100">
+  {% include head.html %} 
+<body class="avenir bg-brand-yellow overflow-hidden h-100">
+  <div id="page" class="bg-brand-light-gray h-100">
+    <div class="w-100 bg-brand-green">
+      {% include nav.html %}
+    </div>
+    {% include hero.html headline=page.hero.headline textline=page.hero.textline image=page.hero.image cta=page.header.cta %}
+  </div>
+  <script src="/assets/js/jquery-3.2.0.min.js" type="text/javascript"></script>
+  <script src="/assets/js/conversational-form.min.js" type="text/javascript"></script>
+  <script type="text/javascript" src="/assets/js/screen.min.js"></script>
+  <!-- Drip -->
+  <script type="text/javascript">
+    var _dcq = _dcq || [];
+    var _dcs = _dcs || {}; 
+    _dcs.account = '1942376';
+
+    (function() {
+      var dc = document.createElement('script');
+      dc.type = 'text/javascript'; dc.async = true; 
+      dc.src = '//tag.getdrip.com/1942376.js';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(dc, s);
+    })();
+  </script>
+  <!-- End Drip -->
+</body>
+</html>
