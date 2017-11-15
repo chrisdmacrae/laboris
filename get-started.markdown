@@ -1,5 +1,6 @@
 ---
 title: Get in touch
+published: false
 hero:
   headline: Find out if the Idea Inquest is right for you
   textline: Let’s find out if an Idea Inquest is right for you! My handy assistant,
