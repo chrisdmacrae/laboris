@@ -1,0 +1,30 @@
+---
+pages:
+- _posts/2017-03-11-some-post.markdown
+hide_body: false
+fields:
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: date
+  label: Date
+  type: datetime
+  hidden: false
+  default: ''
+- name: layout
+  label: Layout
+  type: text
+  hidden: false
+  default: ''
+- name: permalink
+  label: Permalink
+  type: text
+  hidden: false
+  default: "/posts/:title/"
+- name: publishDate
+  label: Publishdate
+  type: text
+  hidden: false
+  default: 

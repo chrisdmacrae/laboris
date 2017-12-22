@@ -1,0 +1,205 @@
+---
+pages:
+- thank-you.markdown
+- index.markdown
+- how-it-works.markdown
+- 404.html
+hide_body: false
+fields:
+- name: title
+  label: Title
+  type: text
+  hidden: false
+  default: ''
+- name: hero
+  label: Hero
+  type: field_group
+  fields:
+  - name: headline
+    label: Headline
+    type: text
+    hidden: false
+    default: ''
+  - name: textline
+    label: Textline
+    type: textarea
+    hidden: false
+    default: ''
+  - name: cta
+    label: Cta
+    type: field_group
+    fields:
+    - name: text
+      label: Text
+      type: text
+      hidden: false
+      default: ''
+    - name: url
+      label: Url
+      type: text
+      hidden: false
+      default: ''
+    hidden: false
+    default: ''
+  - name: image
+    label: Image
+    type: field_group
+    fields:
+    - name: url
+      label: Url
+      type: text
+      hidden: false
+      default: ''
+    - name: caption
+      label: Caption
+      type: text
+      hidden: false
+      default: ''
+    hidden: false
+    default: ''
+  hidden: false
+  default: ''
+- name: layout
+  label: Layout
+  type: text
+  hidden: false
+  default: ''
+- name: blocks
+  label: Blocks
+  type: field_group_list
+  fields:
+  - name: type
+    label: Type
+    type: text
+    hidden: false
+    default: ''
+  - name: headline
+    label: Headline
+    type: text
+    hidden: false
+    default: ''
+  - name: body
+    label: Body
+    type: textarea
+    hidden: false
+    default: ''
+  hidden: false
+  default: ''
+- name: blocks_later
+  label: Blocks later
+  type: field_group_list
+  fields:
+  - name: headline
+    label: Headline
+    type: text
+    hidden: false
+    default: ''
+  - name: body
+    label: Body
+    type: textarea
+    hidden: false
+    default: ''
+  - name: cta
+    label: Cta
+    type: field_group
+    fields:
+    - name: include
+      label: Include
+      type: text
+      hidden: false
+      default: ''
+    hidden: false
+    default: ''
+  hidden: false
+  default: ''
+- name: callout
+  label: Callout
+  type: field_group
+  fields:
+  - name: headline
+    label: Headline
+    type: text
+    hidden: false
+    default: ''
+  - name: textline
+    label: Textline
+    type: textarea
+    hidden: false
+    default: ''
+  - name: cta
+    label: Cta
+    type: field_group
+    fields:
+    - name: text
+      label: Text
+      type: text
+      hidden: false
+      default: ''
+    - name: type
+      label: Type
+      type: text
+      hidden: false
+      default: ''
+    - name: action
+      label: Action
+      type: text
+      hidden: false
+      default: ''
+    - name: url
+      label: Url
+      type: text
+      hidden: false
+      default: ''
+    hidden: false
+    default: ''
+  hidden: false
+  default: 
+- name: x_footer
+  label: X footer
+  type: field_group
+  fields:
+  - name: callout
+    label: Callout
+    type: field_group
+    fields:
+    - name: headline
+      label: Headline
+      type: text
+      hidden: false
+      default: ''
+    - name: textline
+      label: Textline
+      type: textarea
+      hidden: false
+      default: ''
+    - name: image
+      label: Image
+      type: field_group
+      fields:
+      - name: url
+        label: Url
+        type: text
+        hidden: false
+        default: ''
+      - name: caption
+        label: Caption
+        type: text
+        hidden: false
+        default: ''
+      - name: cta
+        label: Cta
+        type: field_group
+        fields:
+        - name: text
+          label: Text
+          type: text
+          hidden: false
+          default: ''
+        hidden: false
+        default: ''
+      hidden: false
+      default: ''
+    hidden: false
+    default: ''
+  hidden: false
+  default: 
